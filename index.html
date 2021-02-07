@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!-- Scrips -->
+    <script src="https://kit.fontawesome.com/0979bbaeea.js" crossorigin="anonymous"></script>
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+    <title>eCarto</title>
+</head>
+
+<body>
+    <div class="all-container">
+        <header class="headerNavbar">
+            <div class="left-header">
+                <a href="" class="ecarto-link">
+                    <img src="img/logo.png" alt="">
+                    <div>
+                        <span>eCarto</span>
+                        <span>CartoData</span>
+                    </div>
+                </a>
+                <a href="#" id="mapTitle">
+                    <i class="fas fa-map"></i> cartodata
+                </a>
+            </div>
+            <div class="middle-header">
+                <a href="">
+                    <img src="img/logo_cartodata.png" alt="">
+                </a>
+            </div>
+            <div class="right-header">
+                <a href="" class="btn">
+                    <i class="fas fa-sign-in-alt"></i> iniciar sesión
+                </a>
+                <div class="dropdown">
+                    <button class="btn" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-comment-dots"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#">Español</a></li>
+                        <li><a class="dropdown-item" href="#">English</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-section">
+            <aside class="aside-menu">
+                <div class="hero-title">
+                    <div class="hero-title-container">
+                        <div>
+                            <span><i class="fas fa-map"></i> Mapas públicos de cartodata</span>
+                        </div>
+                        <div>
+                            <span><i class="fas fa-search"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="scrolling-ul">
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">01 Adquisición de información</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse1">
+                            <div class="collapse-map-img">
+                                <img src="img/01.jpg" class="mapi" alt="" class="img-fluid">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-active-info" data-bs-toggle="tooltip" data-bs-placement="top" title="Prueba de imágenes Satélite - avión - Drone"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse2" role="button" aria-expanded="false" aria-controls="collapse2">1314.TNC - Oax  </span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse2">
+                            <div class="collapse-map-img">
+                                <img src="img/02.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse3" role="button" aria-expanded="false" aria-controls="collapse3">1709.MPIO.COLIMA</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse3">
+                            <div class="collapse-map-img">
+                                <img src="img/03.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse4" role="button" aria-expanded="false" aria-controls="collapse4">1719 CajiAdventure</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse4">
+                            <div class="collapse-map-img">
+                                <img src="img/04.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse5" role="button" aria-expanded="false" aria-controls="collapse5">1722.GDL.LIDAR.MOD3D</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse5">
+                            <div class="collapse-map-img">
+                                <img src="img/05.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse6" role="button" aria-expanded="false" aria-controls="collapse6">1739.GPE.Calles Colonia Almaguer</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse6">
+                            <div class="collapse-map-img">
+                                <img src="img/06.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse7" role="button" aria-expanded="false" aria-controls="collapse7">1810.PGI.LIDARNL</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse7">
+                            <div class="collapse-map-img">
+                                <img src="img/07.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse8" role="button" aria-expanded="false" aria-controls="collapse8">Agave</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse8">
+                            <div class="collapse-map-img">
+                                <img src="img/08.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse9" role="button" aria-expanded="false" aria-controls="collapse9">Área de afectación del Incendio</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse9">
+                            <div class="collapse-map-img">
+                                <img src="img/09.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse10" role="button" aria-expanded="false" aria-controls="collapse10">Colombia - Planet</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse10">
+                            <div class="collapse-map-img">
+                                <img src="img/10.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse11" role="button" aria-expanded="false" aria-controls="collapse11">CONAFOR - Incendios</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse11">
+                            <div class="collapse-map-img">
+                                <img src="img/11.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse12" role="button" aria-expanded="false" aria-controls="collapse12">CONAFOR - UMAFOR Mascota</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse12">
+                            <div class="collapse-map-img">
+                                <img src="img/12.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-active-info" data-bs-toggle="tooltip" data-bs-placement="top" title="Mapa agregando toda la información de la UMAFOR Mascota"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse13" role="button" aria-expanded="false" aria-controls="collapse13">Covid 19</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse13">
+                            <div class="collapse-map-img">
+                                <img src="img/13.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse14" role="button" aria-expanded="false" aria-controls="collapse14">Crecimiento Urbano ZMG</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse14">
+                            <div class="collapse-map-img">
+                                <img src="img/14.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse15" role="button" aria-expanded="false" aria-controls="collapse15">Demo Saltillo</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse15">
+                            <div class="collapse-map-img">
+                                <img src="img/15.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse16" role="button" aria-expanded="false" aria-controls="collapse16">DTM Cajititlan</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse16">
+                            <div class="collapse-map-img">
+                                <img src="img/16.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse17" role="button" aria-expanded="false" aria-controls="collapse17">Guadalajara 2017 - 2019</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse17">
+                            <div class="collapse-map-img">
+                                <img src="img/17.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse18" role="button" aria-expanded="false" aria-controls="collapse18">Jalisco - Educación Básica</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse18">
+                            <div class="collapse-map-img">
+                                <img src="img/18.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-active-info" data-bs-toggle="tooltip" data-bs-placement="top" title="Escuelasa de educación básica en Jalisco"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse19" role="button" aria-expanded="false" aria-controls="collapse19">La Soledad de Graciano Sánchez San Luis Potosí</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse19">
+                            <div class="collapse-map-img">
+                                <img src="img/19.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse20" role="button" aria-expanded="false" aria-controls="collapse20">Línea de costa - Colima</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse20">
+                            <div class="collapse-map-img">
+                                <img src="img/20.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse21" role="button" aria-expanded="false" aria-controls="collapse21">MiniVUX-1 - Los Ángeles CA</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse21">
+                            <div class="collapse-map-img">
+                                <img src="img/21.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse22" role="button" aria-expanded="false" aria-controls="collapse22">Mosaico Planet</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse22">
+                            <div class="collapse-map-img">
+                                <img src="img/22.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-active-info" data-bs-toggle="tooltip" data-bs-placement="top" title="Imágenes de satélite de todo el planeta"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse23" role="button" aria-expanded="false" aria-controls="collapse23">Pleiades</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse23">
+                            <div class="collapse-map-img">
+                                <img src="img/23.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse24" role="button" aria-expanded="false" aria-controls="collapse24">Predio Lopez Mateos Sur</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse24">
+                            <div class="collapse-map-img">
+                                <img src="img/24.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse25" role="button" aria-expanded="false" aria-controls="collapse25">Rancho Contento - Zapopan</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse25">
+                            <div class="collapse-map-img">
+                                <img src="img/25.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse26" role="button" aria-expanded="false" aria-controls="collapse26">Rancho La Fortuna</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse26">
+                            <div class="collapse-map-img">
+                                <img src="img/26.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse27" role="button" aria-expanded="false" aria-controls="collapse27">Relleno Sanitario - Tecoman</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse27">
+                            <div class="collapse-map-img">
+                                <img src="img/27.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse28" role="button" aria-expanded="false" aria-controls="collapse28">Retailligence</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse28">
+                            <div class="collapse-map-img">
+                                <img src="img/28.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse29" role="button" aria-expanded="false" aria-controls="collapse29">San Pedro del Rayo</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse29">
+                            <div class="collapse-map-img">
+                                <img src="img/29.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse30" role="button" aria-expanded="false" aria-controls="collapse30">San Salvador</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse30">
+                            <div class="collapse-map-img">
+                                <img src="img/30.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse31" role="button" aria-expanded="false" aria-controls="collapse31">Stela Solar 1</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse31">
+                            <div class="collapse-map-img">
+                                <img src="img/31.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse32" role="button" aria-expanded="false" aria-controls="collapse32">Taianq- China</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse32">
+                            <div class="collapse-map-img">
+                                <img src="img/32.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse33" role="button" aria-expanded="false" aria-controls="collapse33">Tala_NDVI</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse33">
+                            <div class="collapse-map-img">
+                                <img src="img/33.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse34" role="button" aria-expanded="false" aria-controls="collapse34">The American School Fundation</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse34">
+                            <div class="collapse-map-img">
+                                <img src="img/34.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse35" role="button" aria-expanded="false" aria-controls="collapse35">Tlajomulco - Santa Anita</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse35">
+                            <div class="collapse-map-img">
+                                <img src="img/35.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse36" role="button" aria-expanded="false" aria-controls="collapse36">Tuxla Gutiérrez</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse36">
+                            <div class="collapse-map-img">
+                                <img src="img/36.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span data-bs-toggle="collapse" href="#collapse37" role="button" aria-expanded="false" aria-controls="collapse37">Yucatan Kiuic</span>
+                        <div class="collapse multi-collapse collapse-map" id="collapse37">
+                            <div class="collapse-map-img">
+                                <img src="img/37.jpg" class="mapi" alt="">
+                            </div>
+                            <div class="collapse-map-info">
+                                <span><i class="fas fa-share-alt i-active-share" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartido por cartodata"></i></span>
+                                <span><i class="fas fa-info-circle i-disable" data-bs-toggle="tooltip" data-bs-placement="top" title="Sin descripción"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </aside>
+            <div class="map-section" id="mapid">
+
+            </div>
+        </main>
+
+    </div>
+
+    <!-- JavaScript! -->
+    <script src="js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
