@@ -32,6 +32,7 @@ a {
 }
 
 .all-container {
+    width: 100%;
     height: 100vh;
     overflow: hidden;
 }
@@ -46,6 +47,18 @@ a {
 
 .i-disable {
     color: #adadad!important;
+}
+
+.container-fluid,
+.row {
+    margin: 0px!important;
+    padding: 0px!important;
+    --bs-gutter-x: 0px;
+    --bs-gutter-y: 0px;
+}
+
+.hide {
+    display: none;
 }
 
 
@@ -130,10 +143,6 @@ a {
     }
 }
 
-@media only screen and (min-width: 992px) {}
-
-@media only screen and (min-width: 1360px) {}
-
 
 /* ==========================================================================
    Main section
@@ -143,26 +152,19 @@ a {
     display: flex;
 }
 
-@media only screen and (min-width: 768px) {}
-
-@media only screen and (min-width: 992px) {}
-
-@media only screen and (min-width: 1360px) {}
-
 
 /* ==========================================================================
    Map div
    ========================================================================== */
 
 .map-section {
-    background-color: red;
+    transform: translateX(0);
+    transition: transform ease-out 0.3s;
 }
 
-@media only screen and (min-width: 768px) {}
-
-@media only screen and (min-width: 992px) {}
-
-@media only screen and (min-width: 1360px) {}
+.mapwidth {
+    width: 100%;
+}
 
 
 /* ==========================================================================
@@ -172,25 +174,31 @@ a {
 .aside-menu {
     height: 100vh;
     background: rgb(209, 209, 209);
+    transform: translateX(0);
+}
+
+.aside-menu-hide {
+    transform: translateX(-100%);
+    transition: transform ease-out 0.3s;
 }
 
 .scrolling-ul {
     height: 80%;
     overflow-y: auto;
+    overflow-x: hidden;
     position: relative;
+    width: 100%;
+    margin-top: 1rem;
 }
 
 .scrolling-ul::-webkit-scrollbar {
     display: none;
 }
 
-.aside-menu ul {
-    margin-top: 1rem;
-}
-
-.aside-menu ul>li {
+.aside-menu li {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .aside-menu span {
@@ -218,12 +226,22 @@ a {
     background: white;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     width: 90%;
 }
 
 .hero-title-container div {
     padding-top: 1rem;
     padding-bottom: 1rem;
+}
+
+.collapse-srch {
+    padding-left: 1rem;
+    width: 100%;
+}
+
+.collapse-srch input {
+    width: 80%;
 }
 
 
