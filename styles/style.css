@@ -4,6 +4,10 @@
     box-sizing: inherit;
 }
 
+body {
+    background-color: white;
+}
+
 header {
     background-color: rgb(0, 188, 212);
 }
@@ -30,6 +34,18 @@ a {
 .all-container {
     height: 100vh;
     overflow: hidden;
+}
+
+.i-active-share {
+    color: rgb(0 188 212);
+}
+
+.i-active-info {
+    color: #31708f;
+}
+
+.i-disable {
+    color: #adadad!important;
 }
 
 
@@ -139,13 +155,14 @@ a {
    ========================================================================== */
 
 .map-section {
-    height: 90vh;
-    width: 75%;
+    background-color: red;
 }
 
-.mapi {
-    cursor: pointer;
-}
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1360px) {}
 
 
 /* ==========================================================================
@@ -153,23 +170,18 @@ a {
    ========================================================================== */
 
 .aside-menu {
-    background-color: #edecec;
-    width: 100%;
+    height: 100vh;
+    background: rgb(209, 209, 209);
 }
 
 .scrolling-ul {
-    height: 100vh;
-    overflow-y: scroll;
+    height: 80%;
+    overflow-y: auto;
     position: relative;
 }
 
-.scrolling-ul li {
-    scroll-snap-align: start;
-}
-
-.aside-menu ul,
-li {
-    width: 100%;
+.scrolling-ul::-webkit-scrollbar {
+    display: none;
 }
 
 .aside-menu ul {
@@ -179,7 +191,6 @@ li {
 .aside-menu ul>li {
     display: flex;
     flex-wrap: wrap;
-    scroll-snap-align: start;
 }
 
 .aside-menu span {
@@ -188,8 +199,13 @@ li {
 }
 
 .aside-menu li>span:hover {
-    background-color: rgb(0 188 212);
+    background-color: rgb(0, 188, 212);
 }
+
+
+/* ==========================================================================
+   Title Aside
+   ========================================================================== */
 
 .hero-title {
     padding-top: 1.5rem;
@@ -201,6 +217,7 @@ li {
 .hero-title-container {
     background: white;
     display: flex;
+    justify-content: space-between;
     width: 90%;
 }
 
@@ -208,6 +225,11 @@ li {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+
+
+/* ==========================================================================
+   collapse aside
+   ========================================================================== */
 
 .collapse-map {
     padding-left: 2rem;
@@ -231,39 +253,7 @@ li {
     padding: 0;
 }
 
-.i-active-share {
-    color: rgb(0 188 212);
-}
-
-.i-active-info {
-    color: #31708f;
-}
-
-.i-disable {
-    color: #adadad!important;
-}
-
 .collapse-map-img img {
     width: 80%;
-}
-
-@media only screen and (min-width: 768px) {
-    .aside-menu {
-        background-color: #edecec;
-        width: 50%;
-    }
-}
-
-@media only screen and (min-width: 992px) {
-    .aside-menu {
-        background-color: #edecec;
-        width: 35%;
-    }
-}
-
-@media only screen and (min-width: 1360px) {
-    .aside-menu {
-        background-color: #edecec;
-        width: 25%;
-    }
+    cursor: pointer;
 }

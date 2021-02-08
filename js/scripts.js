@@ -1,7 +1,10 @@
 window.onload = () => {
 
     const maps = document.querySelectorAll('img.mapi');
-    console.log(maps);
+    const aside = document.getElementById('asideMenu');
+    const mapi = document.getElementById('mapi');
+    pixels = document.body.clientWidth;
+    console.log(pixels);
 
     maps.forEach(x => {
         x.addEventListener("click", setMap);
@@ -9,7 +12,7 @@ window.onload = () => {
     })
 
     function setMap() {
-
+        console.log('aqui');
         var mymap = L.map('mapid').setView([51.505, -0.09], 13);
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
